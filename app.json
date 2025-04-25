@@ -1,7 +1,5 @@
-{
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-sample",
-  "logo": "https://rawgit.com/heroku/node-js-sample/master/public/node.svg",
-  "keywords": ["node", "express", "static"]
-}
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 8081; // Change to a free port like 8081
+app.get('/', (req, res) => res.send('Hello from Jenkins Pipeline!'));
+app.listen(PORT, () => console.log(`App running on port ${PORT}`));
